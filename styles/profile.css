@@ -1,0 +1,76 @@
+#rHead {
+    left: 175px;
+    position: relative;
+    top: 150px;
+}
+#visited {
+    background-color: rgba(255, 240, 245, 0.66);
+    float: left;
+    height: 300px;
+    left: 30px;
+    overflow: auto;
+    position: relative;
+    top: 200px;
+    width: 500px;
+}
+#replies {
+    background-color: #EADCE8;
+    float: left;
+    left: 53px;
+    overflow-y: auto;
+    position: relative;
+    top: 200px;
+    width: 460px;
+}
+#stats {
+    float: left;
+    margin-left: 83px;
+    overflow-y: auto;
+    position: relative;
+    top: 200px;
+    width: 460px;
+}
+.recent {
+    float: left;
+    margin-left: 30px;
+    margin-right: 30px;
+    position: relative;
+    width: 400px;
+}
+.recentHead {
+    font-size: 3.1em;
+    border-style: double;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+}
+.recentBod {
+    font-size: 1.3em;
+    font-style: italic;
+    font-weight: lighter;
+}
+#healthBar {
+    position: absolute;
+    top: 250px;
+    visibility: hidden;
+}
+#sHead {
+    left: 240px;
+    position: relative;
+    top: 110px;
+}
+#shareBin {
+    background-color: green;
+    float: right;
+    height: 300px;
+    left: 800px;
+    overflow: scroll;
+    position: relative;
+    top: -100px;
+    width: 700px;
+}
+#search {
+    left: 800px;
+    position: relative;
+    top: 320px;
+}

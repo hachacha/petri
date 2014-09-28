@@ -1,0 +1,28 @@
+
+#container {
+    margin-bottom: 30px;
+    width: 730px;
+}
+#pn {
+    font-family: lucida grande;
+    font-size: 3em;
+    position: absolute;
+}
+#form {
+    background-color: rgba(255, 240, 245, 0.66);
+    position: relative;
+    z-index: 2;
+}
+#extra {
+    font-family: lucida grande;
+    /*position: relative;*/
+}
+#button:hover{
+    background-color:orange;
+    color:white;
+}
+#fail{
+    position:absolute;
+    top:40px;
+    left:40px;
+}

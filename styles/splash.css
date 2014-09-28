@@ -1,0 +1,26 @@
+#logo {
+    height: 720px;
+    position: relative;
+    width: 720px;
+    z-index: -1;
+}
+#pn {
+    bottom: 150px;
+    font-family: lucida grande;
+    font-size: 3em;
+    position: absolute;
+}
+#form {
+    background-color: rgba(255, 240, 245, 0.66);
+    bottom: 720px;
+    float: left;
+    left: 730px;
+    position: relative;
+}
+#extra {
+    bottom: 600px;
+    float: left;
+    font-family: lucida grande;
+    left: 470px;
+    position: relative;
+}
