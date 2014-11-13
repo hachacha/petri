@@ -22,7 +22,7 @@ if(isset($_COOKIE['user_id'])){
 		<center><b>Login</b></center>
 		<form id="logForm" method="post" action="">
 			E-mail Address:<input name='email' required/><br />
-			Password: <input name='pw' type='password' required/><br>
+			Password: <input name='password' type='password' required/><br>
 			<p>
 			<button>submit</button>
 		</form>

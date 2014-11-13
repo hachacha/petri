@@ -10,7 +10,7 @@ class UniversalConnect implements IConnect{
 	private static $db;
 	public function doConnect(){
 		try{
-			self::$db=new PDO("pgsql:host=".self::$server." port=5432 dbname=".self::$currentDB." user=".self::$user." password=". self::$pass);
+			self::$db=new PDO("pgsql:host=".self::$server." port=5432 dbname=".self::$currentDB." user=".self::$user." password=".self::$pass);
 			if(self::$db){
 				//echo "i've connected";
 			}

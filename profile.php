@@ -1,8 +1,7 @@
 <?php
 //this page has to be created with viewability in mind. If someone is not "advanced" enough
 //then certain elements should be hidden.
-include_once("checkNSet.php");
-
+include_once("UserChecker.php");
 ?>
 
 <html>
