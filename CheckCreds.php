@@ -6,11 +6,9 @@ class CheckCreds{
 	#class to be implemented in order to check credentials and see if the user is who they say they is.
 	#and if he wasn't then why would they say they is?
 	public function __construct($email,$password){
-		$this->tableMaster="users";
-		$this->db=UniversalConnect::doConnect();
+		// $this->db=UniversalConnect::doConnect();
 	}
 	public function checkEm($email,$password){
-		$this->tableMaster="users";
 		$this->db=UniversalConnect::doConnect();
 			$sql = "SELECT user_id, email, password = crypt(:pw, password) as log from users where email = :email;";//grab pw to verify and user_id
 			try{

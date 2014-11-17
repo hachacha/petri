@@ -7,7 +7,7 @@ include_once("UserChecker.php");
 <html>
 <head>
 		<title>
-		        Petri Profile
+		        profile
 		</title>
 		<link rel="stylesheet" type="text/css" href="styles/profile.css">
 		<link rel='stylesheet' type='text/css' href='styles/overArch.css'>
