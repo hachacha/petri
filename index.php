@@ -36,26 +36,26 @@ if(isset($_COOKIE['user_id'])){
 </div>
 
 <script type="text/javascript">
-		$("#logForm").on('submit',function(e){
-			e.stopImmediatePropagation();
-			e.preventDefault();
-				$.ajax({
-					type:"post",
-					url:"loginClient.php",
-					data: $("#logForm").serialize(),
-					success: function(data){
-						if(data=="1"){
-							window.location.href= 'profile.php';
-						}
-						else{
-							$("#response").html(data);
-							$("#logForm")[0].reset();
-						}
+	$("#logForm").on('submit',function(e){
+		e.stopImmediatePropagation();
+		e.preventDefault();
+			$.ajax({
+				type:"post",
+				url:"loginClient.php",
+				data: $("#logForm").serialize(),
+				success: function(data){
+					if(data=="1"){
+						window.location.href= 'profile.php';
 					}
-				});
-				return false;
+					else{
+						$("#response").html(data);
+						$("#logForm")[0].reset();
+					}
+				}
 			});
-	</script>
+			return false;
+		});
+</script>
 
 </body>
 

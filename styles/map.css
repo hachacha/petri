@@ -1,0 +1,46 @@
+#header {
+        position: absolute;
+        top:10px;
+        left:5px;
+        font-size:105%;
+
+}
+
+#col1 {
+	width:auto;
+	margin-top:30px;
+	position:relative;
+	top:50px;
+    margin-left:30px;
+}
+#col1 a:link{
+	color:#8F8F8F;
+}
+
+.gold {
+    background-color: #fff0f5;
+}
+.gold p{
+	position:relative;
+	float:bottom;
+}
+.silver p{
+	position:relative;
+	float:bottom;
+}
+.bronze p{
+	position:relative;
+	float:bottom;
+}
+.silver {
+    background-color: #eee0e5;
+}
+.bronze {
+    background-color: #e6e6fa;
+}
+#active{
+    position:relative;
+    float:right;
+    margin-right:40px;
+
+}
