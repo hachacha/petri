@@ -26,7 +26,6 @@ class CheckCreds{
 				}
 				else{
 					echo "the pw and email address do not match";
-					echo "<br> <a href='index.php'>back</a>";
 					exit();
 				}
 			}

@@ -16,7 +16,10 @@
 #col1 a:link{
 	color:#8F8F8F;
 }
-
+#displayType{
+    position:relative;
+    margin-top: 50px;
+}
 .gold {
     background-color: #fff0f5;
 }

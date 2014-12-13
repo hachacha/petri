@@ -1,13 +1,10 @@
 <?php
 include_once("UniversalConnect.php");
 
-class AllPosts{
-	public function __construct($user_id,$room_id){
-			$this->user_id = $user_id;
-			$this->room_id = $room_id;
-			
-		}
-	public function allOfThePosts(){
+class GetPosts{
+	public function allPosts($user_id,$room_id){
+		$this->user_id = $user_id;
+		$this->room_id = $room_id;
 		$this->db=UniversalConnect::doConnect();
 		$sql = "SELECT tp.content as tpc, fp.content as fpc, 
 					ip.content as ipc, ip.filename as ipf, ip.thumb_filename as ipthumb, 
@@ -23,7 +20,7 @@ class AllPosts{
 		try{
 			$q=$this->db->prepare($sql);
 			$q->execute(array(':room_id'=>$this->room_id));
-			$row = $q->fetchAll();
+			return $q->fetchAll();
 			}
 		catch(PDOException $e) {
   			echo $e->getMessage();
@@ -32,8 +29,5 @@ class AllPosts{
 		}
 	}
 }
-
-$worker = new AllPosts($user_id,$room_id);
-$worker->allOfThePosts();
 
 ?>
