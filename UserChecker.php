@@ -6,13 +6,11 @@ class UserChecker{
 		if(!isset($password) || !isset($email)){
 			include_once('logout.php');
 		}
-		$this->can_connect = CheckCreds::checkEm($email,$password);
-		if($this->can_connect==false){
+		$this->level = CheckCreds::checkEm($email,$password);
+		if($this->level==0){
 			include_once('logout.php');
 		}
-	}
+	}//construct
 }
-
-$cns = new UserChecker($_COOKIE['email'], $_COOKIE['password']);
 
 ?>

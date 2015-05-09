@@ -2,6 +2,7 @@
 //this page has to be created with viewability in mind. If someone is not "advanced" enough
 //then certain elements should be hidden.
 include_once("UserChecker.php");
+$user = new UserChecker($_COOKIE['email'], $_COOKIE['password']);
 ?>
 
 <html>

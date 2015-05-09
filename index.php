@@ -44,8 +44,9 @@ if(isset($_COOKIE['user_id'])){
 				url:"loginClient.php",
 				data: $("#logForm").serialize(),
 				success: function(data){
+					console.log(data);
 					if(data=="1"){
-						window.location.href= 'profile.php';
+						window.location.href = 'profile.php';
 					}
 					else{
 						$("#response").html(data);

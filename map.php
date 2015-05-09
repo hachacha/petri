@@ -1,41 +1,28 @@
-<?php include_once("UserChecker.php"); ?>
-
+<?php 
+	include_once("UserChecker.php");
+	include_once("RoomClient.php");
+	$rc = new RoomClient();//automatically gets me my rooms and puts them in $rc->rooms   :p
+?>
 <html>
-<head>
-<title>map</title>
-<link href="styles/map.css" type="text/css" rel="stylesheet">
-<link rel='stylesheet' type='text/css' href='overArch.css'>
-</head>
-
-<body ng-app="myApp">
-	<?php include_once("assets/misc_incl/header.php");?>
-	
- <div class="roomRun" ng-controller="ContentCtrl">
-   <div id="col1" ng-repeat="content in contents">
-       <a ng-href="room.php?rID={{content.room_id}}">
-       		room# {{content.room_id}}:&nbsp;
-			<span class="gold">{{content.t1}}</span>,&nbsp;&nbsp;&nbsp;
-			<span class="silver">{{content.t2}}</span>,&nbsp;&nbsp;&nbsp;
-			<span class="bronze">{{content.t3}}</span>
-		</a>		
-    </div>
- </div>
-</body>
-
-<script src="lib/jquery.min.js"></script>
-<script src="lib/angular.js"></script>
-<script type="text/javascript">
-
-var myApp = angular.module("myApp",[]);
-myApp.controller('ContentCtrl', ['$scope', '$http', function ($scope, $http) {
-		$http.get('/new_petri/RoomClient.php')
-   		.success(function(data) {
-	   		
-    	   	$scope.contents = data;	
-		});
-    // console.log($scope);
-}]);
-
-</script>
-</body>
+	<head>
+		<title>map</title>
+		<link href="styles/map.css" type="text/css" rel="stylesheet">
+		<link rel='stylesheet' type='text/css' href='overArch.css'>
+		<script src="lib/jquery.min.js"></script>
+	</head>
+	<body>
+		<?php include_once("assets/misc_incl/header.php"); ?>
+		<div id="toggleRooms">
+			<!-- should be full of controls for changing what rooms are being displayed. -->
+		</div>
+		<div id="roomDisplay">
+			<!-- contains the rooms that you wanna display :) -->
+			<?php
+				foreach ($rc->rooms as $room) {
+					echo "<div id='col1'><a href='room.php?rID=".$room['room_id']."'>#".$room['room_id'] .
+					"&mdash;&nbsp;".$room['t1']."&nbsp;&ndash;&nbsp;".$room['t2']."&nbsp;&ndash;&nbsp;".$room['t3']."</a></div>";
+				}
+			?>
+		</div>
+	</body>
 </html>

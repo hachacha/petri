@@ -10,19 +10,19 @@ class CheckCreds{
 	}
 	public function checkEm($email,$password){
 		$this->db=UniversalConnect::doConnect();
-			$sql = "SELECT user_id, email, password = crypt(:pw, password) as log from users where email = :email;";//grab pw to verify and user_id
+			$sql = "SELECT user_id, email, level, password = crypt(:pw, password) as log from users where email = :email;";//grab pw to verify and user_id
 			try{
 				$q=$this->db->prepare($sql);
 				$q->execute(array(':email'=>$email,':pw'=>$password));
 				$row = $q->fetch();
 				if($row['email']==null){
 					$this->db=null;//make null to close conn.
-					return false;
+					return 0;
 				}
-				if($row['log']===true){
+				if($row['log']==1){					
 					setcookie("user_id", $row['user_id'], time()+3600, "/");//set user id
 					$this->db=null;
-					return true;
+					return $row['level'];
 				}
 				else{
 					echo "the pw and email address do not match";

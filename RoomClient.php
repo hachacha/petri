@@ -2,9 +2,15 @@
 include_once("GetRooms.php");
 class RoomClient{
 	public function __construct(){
-		$this->rooms = GetRooms::allRooms();	
-		echo json_encode($this->rooms);				
+		$this->rooms = GetRooms::allRooms();
+	}
+	public function userDefRooms($params){
+		if(!isset($params)){
+			return "you have no params";
+		}
+		else{
+			$this->rooms = GetRooms::userRooms($params);
+		}
 	}
 }
-$rc = new RoomClient();
 ?>

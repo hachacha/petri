@@ -18,6 +18,10 @@ class GetRooms{
 		}
 		return $row;
 	}
+	public function userRooms ($params) {
+		//based on params, mess with the query.
+		return;
+	}
 	public function recentActivity(){
 		$this->db = UniversalConnect::doConnect();
 		$rl_query = "SELECT distinct room_id from (select room_id, datetime from posts where datetime > now()::timestamp - interval '4 days' ) as doc order by room_id asc;";

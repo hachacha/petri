@@ -1,0 +1,4 @@
+#buttons ul{
+	display:inline-flex;
+	list-style: none;
+}

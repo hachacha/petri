@@ -1,6 +1,5 @@
 <?php
 include_once("CheckCreds.php");
-
 class LoginClient{
 	public function __construct(){
 		if(!isset($_POST['email'])){
@@ -13,7 +12,7 @@ class LoginClient{
 		}
 		else{
 			$can_connect = CheckCreds::checkEm($_POST['email'],$_POST['password']);
-				if($can_connect===true){
+				if($can_connect > 0){
 					setcookie("email", $_POST['email'], time()+3600, "/"); 
 					setcookie("password", $_POST['password'], time()+3600, "/"); 
 					echo "1";
